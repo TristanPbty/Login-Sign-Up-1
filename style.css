@@ -1,0 +1,294 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --bg: #e9edf0;
+    --light: #ffffff;
+    --dark: #cbd1d8;
+    --blue: #087eea;
+    --cyan: #00d9e9;
+    --text: #15191e;
+    --muted: #9299a1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    background: var(--bg);
+    font-family: 'Poppins', sans-serif;
+    color: var(--text);
+}
+
+/* Cercles du fond */
+
+.bg-circle {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--bg);
+    box-shadow:
+        10px 10px 24px #cbd1d8,
+        -10px -10px 24px #ffffff;
+    z-index: 0;
+}
+
+.bg1 {
+    width: 145px;
+    height: 145px;
+    top: 8%;
+    left: 7%;
+}
+
+.bg2 {
+    width: 55px;
+    height: 55px;
+    top: 20%;
+    right: 19%;
+}
+
+.bg3 {
+    width: 135px;
+    height: 135px;
+    bottom: 8%;
+    right: 7%;
+}
+
+.bg4 {
+    width: 75px;
+    height: 75px;
+    bottom: 17%;
+    left: 20%;
+    opacity: 0.6;
+}
+
+/* Carte principale */
+
+.card {
+    position: relative;
+    z-index: 1;
+    width: 340px;
+    max-width: calc(100vw - 36px);
+    min-height: 340px;
+    padding: 28px 24px 19px;
+    border-radius: 25px;
+    background: var(--bg);
+    box-shadow:
+        12px 12px 28px #cbd1d8,
+        -12px -12px 28px #ffffff;
+    text-align: center;
+    transition: height 0.3s ease;
+}
+
+.lock-icon {
+    width: 43px;
+    height: 43px;
+    margin: 0 auto 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--bg);
+    color: #087eea;
+    font-size: 19px;
+    box-shadow:
+        5px 5px 10px #cbd1d8,
+        -5px -5px 10px #ffffff;
+}
+
+h1 {
+    font-size: 22px;
+    line-height: 1.4;
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+
+.subtitle {
+    font-size: 10px;
+    font-weight: 300;
+    color: var(--muted);
+}
+
+.separator {
+    height: 1px;
+    margin: 16px 0 12px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        #c8ced5,
+        transparent
+    );
+}
+
+/* Champs */
+
+.form {
+    display: none;
+    animation: appear 0.35s ease;
+}
+
+.form.active {
+    display: block;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.input-box {
+    height: 38px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 0 12px;
+    border-radius: 10px;
+    background: var(--bg);
+    box-shadow:
+        inset 4px 4px 8px #cbd1d8,
+        inset -4px -4px 8px #ffffff;
+}
+
+.input-box input {
+    width: 100%;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: 11px;
+    color: var(--text);
+}
+
+.input-box input::placeholder {
+    color: #89919b;
+}
+
+.toggle-password {
+    font-size: 12px;
+    color: #737e8b;
+    cursor: pointer;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    margin: 1px 0 12px;
+    font-size: 9px;
+    white-space: nowrap;
+}
+
+.options label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #858d96;
+}
+
+.options input {
+    width: 10px;
+    height: 10px;
+    accent-color: var(--blue);
+}
+
+a {
+    text-decoration: none;
+    color: #087eea;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Bouton bleu-cyan */
+
+.submit-button {
+    width: 100%;
+    height: 37px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(100deg, #0878ed, #00d9e9);
+    color: white;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow:
+        0 5px 12px rgba(0, 132, 225, 0.22);
+    transition: filter 0.2s, transform 0.2s;
+}
+
+.submit-button:hover {
+    filter: brightness(1.05);
+    transform: translateY(-1px);
+}
+
+.submit-button:active {
+    transform: scale(0.98);
+}
+
+/* Texte et bouton + */
+
+.bottom-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    margin-top: 10px;
+    font-size: 9px;
+    color: #858d96;
+}
+
+#switchButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 29px;
+    height: 29px;
+    border: none;
+    border-radius: 50%;
+    background: var(--bg);
+    color: #087eea;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow:
+        4px 4px 9px #cbd1d8,
+        -4px -4px 9px #ffffff;
+    transition: transform 0.3s ease;
+}
+
+#switchButton:hover {
+    transform: rotate(90deg);
+}
+
+/* Adaptation aux petits écrans */
+
+@media (max-width: 420px) {
+    .card {
+        padding: 25px 20px 17px;
+    }
+
+    .bg1 {
+        left: -40px;
+    }
+
+    .bg3 {
+        right: -35px;
+    }
+}
